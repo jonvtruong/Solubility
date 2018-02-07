@@ -1,6 +1,7 @@
 import xlwt, os, time
+from app import app
 
-fileName = 'example.xls'
+'''fileName = 'example.xls'
 ssDict = {  'ssShakerDelayTimeHI': 1080, 
                 'ssShakerSpeedHI': 700, 
                 'ssNumTempsH': 3, 
@@ -91,12 +92,6 @@ def saveFile(wb):
         time.sleep(1) 
         wb.save(fileName)
 
-if(__name__ == '__main__'):
-    wb = xlwt.Workbook()
-    writeVarList(wb)
-    writeHPipList(wb)
-    saveFile(wb)
-
 def writeHPipList(wb):
     hPipList = wb.add_sheet('HUBER_PIPLIST')
 
@@ -116,3 +111,8 @@ def writeVarList(wb):
         varList.write(row, 1, v, xlwt.easyxf('pattern: pattern solid, fore_color light_yellow; align: vert center, horiz center'))
         row+=1
 
+if(__name__ == '__main__'):
+    wb = xlwt.Workbook()
+    writeVarList(wb)
+    writeHPipList(wb)
+    saveFile(wb)'''
