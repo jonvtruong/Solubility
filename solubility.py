@@ -1,7 +1,7 @@
 import xlwt, os, time
-from app import app
+from Solubility import app
 
-'''fileName = 'example.xls'
+fileName = 'test.xls'
 ssDict = {  'ssShakerDelayTimeHI': 1080, 
                 'ssShakerSpeedHI': 700, 
                 'ssNumTempsH': 3, 
@@ -83,9 +83,13 @@ solventSDict = [
     'S24'	
 ]
 
-def saveFile(wb):
+def saveFile():
     try:
+        wb = xlwt.Workbook()
+        writeVarList(wb)
+        writeHPipList(wb)
         wb.save(fileName)
+
     except PermissionError:
         #close the file wait a second after closing before trying to save to avoid error
         os.system("taskkill /f /im EXCEL.exe")
@@ -110,9 +114,3 @@ def writeVarList(wb):
         varList.write(row, 0, k, xlwt.easyxf('pattern: pattern solid, fore_color light_yellow; align: vert center, horiz left'))
         varList.write(row, 1, v, xlwt.easyxf('pattern: pattern solid, fore_color light_yellow; align: vert center, horiz center'))
         row+=1
-
-if(__name__ == '__main__'):
-    wb = xlwt.Workbook()
-    writeVarList(wb)
-    writeHPipList(wb)
-    saveFile(wb)'''
